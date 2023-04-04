@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратный звонок</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reg.css">
+</head>
+
+<body>
+<h2>Обратный звонок</h2>
+<script>
+    function send_form() {
+        let form = document.forms.main;
+        let name = form.elements.name;
+        let number = form.elements.number;
+
+        if (!name.value){
+            name.select();
+            return
+        }
+        if (!number.value){
+            number.select();
+            return
+        }
+        alert('Звонок поступит в течении 15 минут')
+
+    }
+    function clear_form() {
+        let form = document.forms.main;
+        form.elements.name.value = "";
+        form.elements.number.value = "";
+    }
+
+
+</script>
+<form name="main">
+
+    <label for="name">Ваше имя</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="number">Номер телефона</label><br>
+    <input type="tel" id="number" name="number" value="">
+
+</form>
+
+<div class="input-btn">
+    <input type="submit" onclick="send_form()" value="Запросить звонок">
+
+
+</div>
+
+
+</body>
+
+</html>
